@@ -54,7 +54,7 @@ left: 0%;
     border-radius: 3%;
 
 display: grid;
-
+position: relative;
 
 
 /*
@@ -174,7 +174,7 @@ justify-items: center;
 align-items: center;
 
 position: absolute;
-left: -10%;
+left: 100%;
 top: 35%;
 flex-direction: column;
 max-width:  390px;
@@ -188,3 +188,5 @@ transition: left 0.5s ease-in-out;
 
 
 }
+
+h4{font-size: 25px;}

@@ -11,23 +11,14 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
     MonButton.addEventListener("click", function () {
         main.style.left = "0%";
         TextCon.style.left = "0%";
-        TagCon.style.left = "0%";
+        TagCon.style.left = "100%";
     });
 
 
     TagButton.addEventListener("click", function () { 
-        const body = document.querySelector("body");
-        const bodyimfo = body.offsetWidth;
-        const containerWidth = TagCon.offsetWidth;
-        const CalculationWay = (bodyimfo - containerWidth) / 2;
-
-
-        
         main.style.left = "-100%";
         TextCon.style.left = "-100%";
-        TagCon.style.left = `${CalculationWay}px`
-
-        
+        TagCon.style.left = "0%";
     });
 
 
