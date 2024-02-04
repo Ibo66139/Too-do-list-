@@ -174,7 +174,8 @@ justify-items: center;
 align-items: center;
 
 position: absolute;
-right: 0%;
+left: -10%;
+top: 35%;
 flex-direction: column;
 max-width:  390px;
 width: 100%;

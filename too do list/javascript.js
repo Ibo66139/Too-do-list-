@@ -5,20 +5,35 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
     const TagCon = document.querySelector('.Tag-con');
     const MonButton = document.querySelector(".MonButton");
     const TagButton = document.querySelector(".TagButton");
-    
+   
+
+
     MonButton.addEventListener("click", function () {
         main.style.left = "0%";
         TextCon.style.left = "0%";
-        TagCon.style.left = "66.5%";
-    });
-
-
-    TagButton.addEventListener("click", function () {
-        main.style.left = "-100%";
-        TextCon.style.left = "-100%";
         TagCon.style.left = "0%";
     });
 
+
+    TagButton.addEventListener("click", function () { 
+        const body = document.querySelector("body");
+        const bodyimfo = body.offsetWidth;
+        const containerWidth = TagCon.offsetWidth;
+        const CalculationWay = (bodyimfo - containerWidth) / 2;
+
+
+        
+        main.style.left = "-100%";
+        TextCon.style.left = "-100%";
+        TagCon.style.left = `${CalculationWay}px`
+
+        
+    });
+
+
+    
+
+    
 
 
 
