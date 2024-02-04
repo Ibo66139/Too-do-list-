@@ -42,21 +42,41 @@ main{
 display: flex;
 justify-content: center;
 align-items: center;
-
+position: relative;
+transition: left 0.5s ease-in-out;
+left: 0%;
 
     width: 100%;
 }
 
 .TooDoList{
+    
+    border-radius: 3%;
 
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+display: grid;
+
+
+
+/*
+grid-column-start: ;
+grid-column-end: ;
+grid-row-start: ;
+grid-row-end: ; */
+
+grid-template-columns: 100% ;
+grid-template-rows:   25% 32% 32% 8% ;
+
+
+
+
+
+
+
+
 gap: 5px;
-
+max-width: 450px;
 width: 40%;
-height: 70%;
+height: 80%;
 
 overflow: hidden;
 background-color: burlywood;
@@ -84,6 +104,9 @@ h3{
 
     font-size: 25px;
 
+    margin-bottom: 5px;
+    margin-top: 5px;
+
 }
 
 
@@ -101,19 +124,27 @@ table{
     justify-content: center; /* Elemente am linken Rand ausrichten */
   align-items: center; /* Elemente in der Mitte vertikal ausrichten */
     width: 65%;
-
+    margin-top: 5px;
+    margin-bottom: 5px;
     gap: 5px;
+
 }
 
 
 .TextCon{
-
+    position: relative;
+    left: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 90%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: left 0.5s ease-in-out;
 
 
 
@@ -132,5 +163,27 @@ margin-left: 5%;
 
 
 margin-left: 35%;
+
+}
+
+
+.Tag-con{
+
+display: flex;
+justify-items: center;
+align-items: center;
+
+position: absolute;
+right: 0%;
+flex-direction: column;
+max-width:  390px;
+width: 100%;
+max-height: 466px;
+height: 100%;
+transition: left 0.5s ease-in-out;
+
+
+
+
 
 }
