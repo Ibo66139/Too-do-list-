@@ -6,9 +6,13 @@ body{
     flex-direction: column;
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
 
 
 }
+
+
 
 header{
 
@@ -17,7 +21,116 @@ header{
     justify-content: center;
     flex-direction: column;
 
+    width: 100%;
 
 
+}
+
+
+footer{
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}
+
+
+main{
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+    width: 100%;
+}
+
+.TooDoList{
+
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 5px;
+
+width: 40%;
+height: 70%;
+
+overflow: hidden;
+background-color: burlywood;
+
+
+}
+
+
+
+h1{
+
+    font-size: 55px;
+    
+    
+    
+    }
+
+button{
+    font-size: 35px;
+}
+
+
+h3{
+
+
+    font-size: 25px;
+
+}
+
+
+table{
+
+    
+    font-size: 25px;
+}
+
+
+
+.TextBox{
+
+    display: flex;
+    justify-content: center; /* Elemente am linken Rand ausrichten */
+  align-items: center; /* Elemente in der Mitte vertikal ausrichten */
+    width: 65%;
+
+    gap: 5px;
+}
+
+
+.TextCon{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+
+
+
+}
+
+
+.Text{
+
+margin-left: 5%;
+
+
+}
+
+
+.Datum{
+
+
+margin-left: 35%;
 
 }
