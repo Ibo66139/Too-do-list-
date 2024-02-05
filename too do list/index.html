@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="javascript.js"></script>
+  <script src="script.js"></script>
   <title>Too do list</title>
 </head>
 <body>
@@ -18,8 +18,8 @@
 
     <div class="con-button">
 
-      <button class="MonButton">Monat</button>
-      <button class="TagButton">Tag</button>
+      <button class="MonButton">Month</button>
+      <button class="TagButton">Day</button>
 
 
     </div>
@@ -103,37 +103,11 @@
   <div class="TextCon">
 
 
-    <div class="TextBox">
 
+    <p  id="Info" style="font-size: 25px;">There's nothing to do this month! </p>
 
-      <img src="/too do list/img/verifiziert.png">
-
-      <p class="Text">Text</p>
-
-      <p class="Datum">Datum</p>
-
-
-
-
-
-    </div>
-
-    <div class="TextBox">
-
-
-      <img src="/too do list/img/verifiziert.png">
-
-      <p class="Text">Text</p>
-
-      <p class="Datum">Datum</p>
-
-
-
-
-
-    </div>
-
-
+    
+   
 
 
   </div>
@@ -168,9 +142,9 @@
   <div class="add-con">
           
     <form>
-          <input type="text">
-          <input type="date">
-         <button type="submit">Save</button>
+          <input type="text" id="TextInput"  >
+          <input type="date" id="DateInput" >
+         <button type="button" id="SaveButton">Save</button>
          <img src="/too do list/img/kreuz.png" class="imgClose">
 
 

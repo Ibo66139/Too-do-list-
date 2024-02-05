@@ -68,6 +68,8 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
     const AddCon =document.getElementsByClassName("add-con")[0];
     const CloseImg =document.getElementsByClassName("imgClose")[0];
     const AddImg =document.getElementById("add-img");
+    const SaveButton =document.getElementById("SaveButton");
+    
 
     AddImg.addEventListener("click", function () {
 
@@ -87,6 +89,45 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
     CloseImg.addEventListener("click", function () {
 
         AddCon.style.top = "110%";
+
+
+    })
+
+
+
+    SaveButton.addEventListener("click", function () {
+        const TextInput =document.getElementById("TextInput").value;
+        const DateInput =document.getElementById("DateInput").value;
+        const TextCon = document.querySelector(".TextCon");
+        
+        const Info =document.getElementById("Info");
+
+        if (Info) {
+            Info.remove();
+        }
+
+        const TextBox = document.createElement('div');
+
+        TextBox.classList.add('TextBox'); 
+        TextBox.id = ('TextBox');
+
+        
+
+        
+   
+
+        TextBox.innerHTML = `
+        <img src="/too do list/img/verifiziert.png">
+        <p class="Text">${TextInput}</p>
+        <p class="Datum">${DateInput}</p>
+    `;
+
+    
+    TextCon.appendChild(TextBox);
+
+
+    
+
 
 
     })
