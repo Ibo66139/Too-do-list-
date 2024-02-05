@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
     const TagCon = document.querySelector('.Tag-con');
     const MonButton = document.querySelector(".MonButton");
     const TagButton = document.querySelector(".TagButton");
+
+    
    
 
 
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
     TagButton.addEventListener("click", function () { 
         main.style.left = "-100%";
         TextCon.style.left = "-100%";
-        TagCon.style.left = "0%";
+        TagCon.style.left = "8%";
     });
 
 
@@ -59,3 +61,49 @@ document.addEventListener("DOMContentLoaded",function CurrentData(){
 
 
 
+
+
+document.addEventListener("DOMContentLoaded",function addFunction(){
+
+    const AddCon =document.getElementsByClassName("add-con")[0];
+    const CloseImg =document.getElementsByClassName("imgClose")[0];
+    const AddImg =document.getElementById("add-img");
+
+    AddImg.addEventListener("click", function () {
+
+        AddCon.style.top = "30%";
+        
+
+
+
+
+
+
+        
+
+
+    })
+
+    CloseImg.addEventListener("click", function () {
+
+        AddCon.style.top = "110%";
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
