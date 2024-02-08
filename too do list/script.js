@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
     const MonButton = document.querySelector(".MonButton");
     const TagButton = document.querySelector(".TagButton");
 
+    const UserImg = document.getElementById("User-img");
+    const UserCon = document.getElementById("User-con");
     
    
 
@@ -20,13 +22,17 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
     TagButton.addEventListener("click", function () { 
         main.style.left = "-100%";
         TextCon.style.left = "-100%";
-        TagCon.style.left = "8%";
+        TagCon.style.left = "0%";
     });
 
 
     
-
     
+    
+  
+    UserImg.addEventListener("click", function() { 
+        UserCon.style.left = "0%";
+    });
 
 
 
@@ -93,18 +99,27 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
 
     })
 
+    SaveButton.addEventListener("click", function () {
+
+        AddCon.style.top = "110%";
+
+
+    })
+
 
 
     SaveButton.addEventListener("click", function () {
         const TextInput =document.getElementById("TextInput").value;
         const DateInput =document.getElementById("DateInput").value;
         const TextCon = document.querySelector(".TextCon");
+        const TagCon = document.getElementById("Tag-con");
+        const InfoPs = document.querySelectorAll(".Info-p");
         
-        const Info =document.getElementById("Info");
+      
 
-        if (Info) {
-            Info.remove();
-        }
+        InfoPs.forEach(element => {
+            element.remove();
+        });
 
         const TextBox = document.createElement('div');
 
@@ -122,9 +137,10 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
         <p class="Datum">${DateInput}</p>
     `;
 
-    
-    TextCon.appendChild(TextBox);
+    const TextBoxClone = TextBox.cloneNode(true);
 
+    TextCon.appendChild(TextBox);
+    TagCon.appendChild(TextBoxClone);
 
     
 
@@ -148,3 +164,7 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
 
 
 });
+
+
+
+
