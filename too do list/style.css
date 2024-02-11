@@ -8,6 +8,8 @@ body{
     padding: 0;
     width: 100vw;
     height: 100vh;
+    color: black;
+
 
 
 }
@@ -22,14 +24,14 @@ header{
     flex-direction: column;
 
     width: 100%;
-
+   
 
 }
 
 
 footer{
 
-
+    margin-top: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +56,7 @@ width: 100%;
 
 .TooDoList{
     
-    border-radius: 3%;
+    border-radius: 1%;
 
 display: grid;
 position: relative;
@@ -81,8 +83,8 @@ max-width: 450px;
 width: 40%;
 height: 80%;
 
-overflow: none; 
-background-color: burlywood;
+overflow: hidden; 
+background-color: rgb(244, 244, 244);
 
 
 }
@@ -107,6 +109,7 @@ h1{
     
     
     
+    
     }
 
 button{
@@ -115,7 +118,7 @@ button{
 
 
 h3{
-
+   
 
     font-size: 25px;
 
@@ -128,6 +131,14 @@ h3{
 table{
 
     
+   
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    
+    width: 80%;
+    height: 90%;
+
     font-size: 25px;
 }
 
@@ -135,13 +146,19 @@ table{
 
 .TextBox{
 
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
     display: flex;
     justify-content: center; /* Elemente am linken Rand ausrichten */
   align-items: center; /* Elemente in der Mitte vertikal ausrichten */
-    width: 65%;
+    max-width: 90%;
+    width: 100%;
     margin-top: 5px;
     margin-bottom: 5px;
     gap: 5px;
+    position: relative;
 
 }
 
@@ -150,39 +167,50 @@ table{
     position: relative;
     left: 0%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 99%;
     height: 100%;
     overflow: hidden;
     overflow-y: auto;
     margin-top: 5px;
     margin-bottom: 5px;
     transition: left 0.5s ease-in-out;
+    margin-left: 2px;
 
-
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
 }
 
 
 .Text{
+max-width: 50%;
+width: 100%;
 
-margin-left: 5%;
 
 
 }
 
 
 .Datum{
+    max-width: 30%;
+    width: 100%;
 
 
-margin-left: 35%;
 
 }
 
 
 .Tag-con{
+
+    margin: 2px;
+
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
 display: flex;
 justify-items: center;
@@ -193,7 +221,7 @@ left: 100%;
 top: 25%;
 flex-direction: column;
 max-width:  390px;
-width: 100%;
+width: 99%;
 max-height: 466px;
 height: 100%;
 transition: left 0.5s ease-in-out;
@@ -207,13 +235,17 @@ overflow-y: auto;
 h4{font-size: 25px;}
 
 .add-con{
+
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
 position: absolute;
 left: 5%;
 top: 110%;
-background-color: aqua;
+
 width: 90%;
 max-width: 100%;
 height: 50%;
@@ -230,6 +262,7 @@ transition: top 0.5s ease-in-out;
     
     
 }
+
 
 
 #add-img{
@@ -257,7 +290,7 @@ form{
     align-items: center;
     height: 100%;
     width: 100%;
-   
+   padding: 2px;
     gap: 2px;
 
 
@@ -274,6 +307,13 @@ form{
     flex-direction: column;
     gap: 5px;
     z-index: 1;
+    transition: left 0.5s ease-in-out;
+    background-color: aqua;
+    border-radius: 1%;
+
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -282,6 +322,264 @@ form{
 
     
 }
+
+
+.img-textCon{
+
+    cursor: pointer;
+    position: relative;
+    left: 0%;
+    max-width: 10%;
+    width: 100%;
+
+}
+
+#TextInput{
+width: 40%;
+
+
+}
+
+#SaveButton{
+    width: 30%;
+
+
+}
+
+
+#DateInput{
+    width: 30%;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.moon svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* .switch:hover */.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+ 
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+ 
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+
+
+button {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 100%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+  }
+  
+  button:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+  }
+  
+  button:active {
+    letter-spacing: 3px;
+    background-color: rgb(93, 24, 220);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  
 
 
 

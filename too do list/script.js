@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
     const TagCon = document.querySelector('.Tag-con');
     const MonButton = document.querySelector(".MonButton");
     const TagButton = document.querySelector(".TagButton");
+    const CloseImg =document.getElementsByClassName("imgClose")[1];
 
     const UserImg = document.getElementById("User-img");
-    const UserCon = document.getElementById("User-con");
+    const UserCon = document.querySelector(".User-con");
     
    
 
@@ -32,6 +33,10 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
   
     UserImg.addEventListener("click", function() { 
         UserCon.style.left = "0%";
+    });
+
+    CloseImg.addEventListener("click", function() { 
+        UserCon.style.left = "100%";
     });
 
 
@@ -75,35 +80,19 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
     const CloseImg =document.getElementsByClassName("imgClose")[0];
     const AddImg =document.getElementById("add-img");
     const SaveButton =document.getElementById("SaveButton");
+    const ImgVerifiziert = document.querySelectorAll(".img-textCon");
     
 
     AddImg.addEventListener("click", function () {
-
         AddCon.style.top = "30%";
-        
-
-
-
-
-
-
-        
-
-
     })
 
     CloseImg.addEventListener("click", function () {
-
         AddCon.style.top = "110%";
-
-
     })
 
     SaveButton.addEventListener("click", function () {
-
         AddCon.style.top = "110%";
-
-
     })
 
 
@@ -132,7 +121,7 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
    
 
         TextBox.innerHTML = `
-        <img src="/too do list/img/verifiziert.png">
+        <img src="/too do list/img/verifiziert.png" class="img-textCon" >
         <p class="Text">${TextInput}</p>
         <p class="Datum">${DateInput}</p>
     `;
@@ -148,22 +137,77 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
 
     })
 
+    document.addEventListener("click", function (event) {
+        if (event.target.tagName === "IMG" || event.target.nodeName === "IMG") {
+            if (event.target.classList.contains("img-textCon")) {
+                    event.target.src = "/too do list/img/verifiziertgrenn.png"; 
+
+                    const clonedDiv = document.querySelector(".TextBox"); 
+                    const clonedImgs = clonedDiv.querySelector(".img-textCon"); 
+        
+                    const TagCon = document.getElementById("Tag-con");
+        
+                    TagCon.querySelectorAll(".img-textCon")[0].setAttribute("src", "/too do list/img/verifiziertgrenn.png");
+        
+                    const nextImg = TagCon.querySelectorAll(".img-textCon")[1];
 
 
+                    
+                    
+                    if (nextImg) {
 
+                        nextImg.querySelectorAll(".img-textCon")[1];
 
+                    } else {
+                        console.log("Es gibt kein weiteres Bild.");
 
+                    }
+                    
+                    
+                    
+                
+            }
+        }
+    });
 
-
-
-
-
-
-
-
-
-
+   
+    
+    
+    
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const Button = document.getElementById('inputmode');
+    const TextCon = document.querySelector(".TextCon");
+    const Tabel = document.getElementById("table");
+    const TagCon = document.querySelector('.Tag-con');
+    const TooDooList = document.querySelector('.TooDoList');
+    const AddCon = document.querySelector(".add-con");
+    const UserCon = document.querySelector(".User-con");
+    const body = document.querySelector("body");
+
+    Button.addEventListener("click", function() {
+        if (Button.checked) {
+            TextCon.style.backgroundColor = "#333";
+            Tabel.style.backgroundColor = "#333";
+            TagCon.style.backgroundColor = "#333";
+            TooDooList.style.backgroundColor = "#222";
+            AddCon.style.backgroundColor = "#222";
+            UserCon.style.backgroundColor = "#333";
+            body.style.color = "#fff";
+            
+        } else {
+            TextCon.style.backgroundColor = "#fff";
+            Tabel.style.backgroundColor = "#fff";
+            TagCon.style.backgroundColor = "#fff";
+            TooDooList.style.backgroundColor = "#f4f4f4";
+            AddCon.style.backgroundColor = "#f4f4f4";
+            UserCon.style.backgroundColor = "#fff";
+            body.style.color = "black";
+        }
+    });
+});
+
 
 
 
