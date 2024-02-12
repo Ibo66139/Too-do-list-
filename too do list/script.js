@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
    
 
         TextBox.innerHTML = `
-        <img src="/too do list/img/verifiziert.png" class="img-textCon" >
+        <img src="img/verifiziert.png" class="img-textCon" >
         <p class="Text">${TextInput}</p>
         <p class="Datum">${DateInput}</p>
     `;
@@ -140,14 +140,14 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
     document.addEventListener("click", function (event) {
         if (event.target.tagName === "IMG" || event.target.nodeName === "IMG") {
             if (event.target.classList.contains("img-textCon")) {
-                    event.target.src = "/too do list/img/verifiziertgrenn.png"; 
+                    event.target.src = "img/verifiziertgrenn.png"; 
 
                     const clonedDiv = document.querySelector(".TextBox"); 
                     const clonedImgs = clonedDiv.querySelector(".img-textCon"); 
         
                     const TagCon = document.getElementById("Tag-con");
         
-                    TagCon.querySelectorAll(".img-textCon")[0].setAttribute("src", "/too do list/img/verifiziertgrenn.png");
+                    TagCon.querySelectorAll(".img-textCon")[0].setAttribute("src", "img/verifiziertgrenn.png");
         
                     const nextImg = TagCon.querySelectorAll(".img-textCon")[1];
 
@@ -187,6 +187,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const body = document.querySelector("body");
 
     Button.addEventListener("click", function() {
+
+        
         if (Button.checked) {
             TextCon.style.backgroundColor = "#333";
             Tabel.style.backgroundColor = "#333";
@@ -195,7 +197,10 @@ document.addEventListener("DOMContentLoaded", function() {
             AddCon.style.backgroundColor = "#222";
             UserCon.style.backgroundColor = "#333";
             body.style.color = "#fff";
-            
+
+
+
+    
         } else {
             TextCon.style.backgroundColor = "#fff";
             Tabel.style.backgroundColor = "#fff";
@@ -204,9 +209,81 @@ document.addEventListener("DOMContentLoaded", function() {
             AddCon.style.backgroundColor = "#f4f4f4";
             UserCon.style.backgroundColor = "#fff";
             body.style.color = "black";
+
+         
+
+
+        }
+
+
+        document.getElementById("inputmode").addEventListener("click", function() {
+
+            
+            
+            const TextBox = document.getElementById("TextBox");
+            if (Button.checked) {
+                TextBox.style.backgroundColor = "#333";
+            } else {
+                TextBox.style.backgroundColor = "#fff";
+            }
+        });
+    });
+
+
+    document.getElementById("SaveButton").addEventListener("click", function() {
+
+        const Button = document.getElementById('inputmode');
+            
+        const TextBox = document.getElementById("TextBox");
+        if (Button.checked) {
+            TextBox.style.backgroundColor = "#333";
+        } else {
+            TextBox.style.backgroundColor = "#fff";
         }
     });
+
+
+    Button.addEventListener("click", function() {
+        const TextBox = document.querySelectorAll("TextBox");
+        if (Button.checked) {
+            // Ändere die Hintergrundfarbe aller Tabellen
+            TextBox.forEach(TextBox => {
+                TextBox.style.backgroundColor = "#333";
+            });
+        } else {
+            // Ändere die Hintergrundfarbe aller Tabellen
+            TextBox.forEach(TextBox => {
+                TextBox.style.backgroundColor = "#fff";
+            });
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
 
 
 
