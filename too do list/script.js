@@ -6,9 +6,36 @@ document.addEventListener("DOMContentLoaded",function PositionChange(){
     const MonButton = document.querySelector(".MonButton");
     const TagButton = document.querySelector(".TagButton");
     const CloseImg =document.getElementsByClassName("imgClose")[1];
+    const CloseImg2 =document.getElementsByClassName("imgClose")[2];
+
 
     const UserImg = document.getElementById("User-img");
     const UserCon = document.querySelector(".User-con");
+
+    const ClookImg = document.getElementById("Clook-img");
+    const ClookCon = document.getElementsByClassName("Clook-con")[0];
+
+
+
+    CloseImg2.addEventListener("click", function () {
+
+        ClookCon.style.right = "100%";
+
+
+
+
+    })
+
+    ClookImg.addEventListener("click", function () {
+        ClookCon.style.right = "0%";
+
+
+
+
+
+
+    })
+
     
    
 
@@ -96,13 +123,15 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
     })
 
 
-
+    let counter = 0;
     SaveButton.addEventListener("click", function () {
         const TextInput =document.getElementById("TextInput").value;
         const DateInput =document.getElementById("DateInput").value;
         const TextCon = document.querySelector(".TextCon");
         const TagCon = document.getElementById("Tag-con");
         const InfoPs = document.querySelectorAll(".Info-p");
+
+        counter++;
         
       
 
@@ -110,10 +139,13 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
             element.remove();
         });
 
-        const TextBox = document.createElement('div');
+        let TextBox = document.createElement('div');
 
         TextBox.classList.add('TextBox'); 
-        TextBox.id = ('TextBox');
+
+        TextBox.dataset.category = 'specific' + counter;
+
+        
 
         
 
@@ -137,54 +169,56 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
 
     })
 
-    document.addEventListener("click", function (event) {
-        if (event.target.tagName === "IMG" || event.target.nodeName === "IMG") {
-            if (event.target.classList.contains("img-textCon")) {
-                    event.target.src = "img/verifiziertgrenn.png"; 
+    document.addEventListener("click", function(event) {
+       
+        if (event.target.classList.contains("img-textCon")) {
+          
+            event.target.src = "img/verifiziertgrenn.png";
+    
+           
+            let specificCategory = event.target.dataset.category;
+    
+            
+            let specificElements = document.querySelectorAll(`.img-textCon[data-category="${specificCategory}"]`);
+    
+            
+            if (specificElements.length > 0) {
+                specificElements.forEach(function(element) {
+                    element.src = "img/verifiziertgrenn.png";
+                });
+            }
+        }
+    });
+    
+    
+    
+                  
 
-                    const clonedDiv = document.querySelector(".TextBox"); 
-                    const clonedImgs = clonedDiv.querySelector(".img-textCon"); 
-        
-                    const TagCon = document.getElementById("Tag-con");
-        
-                    TagCon.querySelectorAll(".img-textCon")[0].setAttribute("src", "img/verifiziertgrenn.png");
-        
-                    const nextImg = TagCon.querySelectorAll(".img-textCon")[1];
-
-
+    
                     
-                    
-                    if (nextImg) {
-
-                        nextImg.querySelectorAll(".img-textCon")[1];
-
-                    } else {
-                        console.log("Es gibt kein weiteres Bild.");
-
-                    }
                     
                     
                     
                 
-            }
-        }
-    });
+            
+});
 
    
     
     
-    
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+
+document.addEventListener("DOMContentLoaded", function DarkMode() {
     const Button = document.getElementById('inputmode');
     const TextCon = document.querySelector(".TextCon");
     const Tabel = document.getElementById("table");
     const TagCon = document.querySelector('.Tag-con');
-    const TooDooList = document.querySelector('.TooDoList');
+    const ToDooList = document.querySelector('.ToDoList');
     const AddCon = document.querySelector(".add-con");
     const UserCon = document.querySelector(".User-con");
     const body = document.querySelector("body");
+    const ClookCon = document.getElementsByClassName("Clook-con")[0];
+    const HistoryCon = document.getElementsByClassName("History-con")[0];
 
     Button.addEventListener("click", function() {
 
@@ -193,10 +227,13 @@ document.addEventListener("DOMContentLoaded", function() {
             TextCon.style.backgroundColor = "#333";
             Tabel.style.backgroundColor = "#333";
             TagCon.style.backgroundColor = "#333";
-            TooDooList.style.backgroundColor = "#222";
+            ToDooList.style.backgroundColor = "#222";
             AddCon.style.backgroundColor = "#222";
             UserCon.style.backgroundColor = "#333";
             body.style.color = "#fff";
+            ClookCon.style.backgroundColor = "#333";
+            HistoryCon.style.backgroundColor = "#333";
+
 
 
 
@@ -205,22 +242,26 @@ document.addEventListener("DOMContentLoaded", function() {
             TextCon.style.backgroundColor = "#fff";
             Tabel.style.backgroundColor = "#fff";
             TagCon.style.backgroundColor = "#fff";
-            TooDooList.style.backgroundColor = "#f4f4f4";
+            ToDooList.style.backgroundColor = "#f4f4f4";
             AddCon.style.backgroundColor = "#f4f4f4";
             UserCon.style.backgroundColor = "#fff";
             body.style.color = "black";
-
-         
+            ClookCon.style.backgroundColor = "#fff";
+            HistoryCon.style.backgroundColor = "#fff";
 
 
         }
 
 
-        document.getElementById("inputmode").addEventListener("click", function() {
+        
+    });
 
-            
-            
-            const TextBox = document.getElementById("TextBox");
+
+    document.getElementById("SaveButton").addEventListener("click", function() {
+        let Button = document.getElementById('inputmode');
+        let TextBoxes = document.querySelectorAll('.TextBox');
+    
+        TextBoxes.forEach(function(TextBox) {
             if (Button.checked) {
                 TextBox.style.backgroundColor = "#333";
             } else {
@@ -228,30 +269,23 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+    
 
 
-    document.getElementById("SaveButton").addEventListener("click", function() {
 
-        const Button = document.getElementById('inputmode');
-            
-        const TextBox = document.getElementById("TextBox");
-        if (Button.checked) {
-            TextBox.style.backgroundColor = "#333";
-        } else {
-            TextBox.style.backgroundColor = "#fff";
-        }
-    });
 
 
     Button.addEventListener("click", function() {
-        const TextBox = document.querySelectorAll("TextBox");
+
+        let TextBox = document.querySelectorAll(".TextBox");
+
         if (Button.checked) {
-            // Ändere die Hintergrundfarbe aller Tabellen
+           
             TextBox.forEach(TextBox => {
                 TextBox.style.backgroundColor = "#333";
             });
         } else {
-            // Ändere die Hintergrundfarbe aller Tabellen
+           
             TextBox.forEach(TextBox => {
                 TextBox.style.backgroundColor = "#fff";
             });
