@@ -133,8 +133,6 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
 
         counter++;
         
-      
-
         InfoPs.forEach(element => {
             element.remove();
         });
@@ -147,48 +145,66 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
 
         
 
-        
-
-        
-   
-
         TextBox.innerHTML = `
         <img src="img/verifiziert.png" class="img-textCon" >
         <p class="Text">${TextInput}</p>
         <p class="Datum">${DateInput}</p>
-    `;
+        `;
 
-    const TextBoxClone = TextBox.cloneNode(true);
+        const TextBoxClone = TextBox.cloneNode(true);
 
-    TextCon.appendChild(TextBox);
-    TagCon.appendChild(TextBoxClone);
+        TextCon.appendChild(TextBox);
+        TagCon.appendChild(TextBoxClone);
 
-    
+      
+
+
+
+
+
+
+
+
+
+
 
 
 
     })
 
     document.addEventListener("click", function(event) {
-       
         if (event.target.classList.contains("img-textCon")) {
-          
-            event.target.src = "img/verifiziertgrenn.png";
-    
            
-            let specificCategory = event.target.dataset.category;
-    
             
-            let specificElements = document.querySelectorAll(`.img-textCon[data-category="${specificCategory}"]`);
     
-            
-            if (specificElements.length > 0) {
-                specificElements.forEach(function(element) {
-                    element.src = "img/verifiziertgrenn.png";
-                });
+            if (event.target.src.includes("img/verifiziert.png")) {
+                
+
+                event.target.src = "img/verifiziertgrenn.png"
+
+            }
+            else{
+
+                event.target.src = "img/verifiziert.png"
+
             }
         }
     });
+    
+          
+    
+           
+           // let specificCategory = event.target.dataset.category;
+    
+            
+           // let specificElements = document.querySelectorAll(`.img-textCon[data-category="${specificCategory}"]`);
+    
+            
+         //   if (specificElements.length > 0) {
+         //        specificElements.forEach(function(element) {
+         //           element.src = "img/verifiziertgrenn.png";
+          //      });
+         //   }
     
     
     
