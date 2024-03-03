@@ -131,7 +131,16 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
         const TagCon = document.getElementById("Tag-con");
         const InfoPs = document.querySelectorAll(".Info-p");
 
-        counter++;
+        if (TextInput.trim() === "" || DateInput.trim() === "") {
+            alert("Bitte füllen Sie alle erforderlichen Felder aus.");
+            return;
+        }
+        
+        
+       
+    
+        let counter = 0; 
+
         
         InfoPs.forEach(element => {
             element.remove();
@@ -147,7 +156,15 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
 
         TextBox.innerHTML = `
         <img src="img/verifiziert.png" class="img-textCon" >
+
         <p class="Text">${TextInput}</p>
+
+        <button class="btn">
+        <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
+        <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
+        </svg>
+        </button>
+
         <p class="Datum">${DateInput}</p>
         `;
 
@@ -174,42 +191,25 @@ document.addEventListener("DOMContentLoaded",function addFunction(){
 
     document.addEventListener("click", function(event) {
         if (event.target.classList.contains("img-textCon")) {
-           
-            
+            let textBox = event.target.closest(".TextBox");
+            let button = textBox.querySelector(".btn");
+            let datum = textBox.querySelector(".Datum");
     
             if (event.target.src.includes("img/verifiziert.png")) {
-                
-
-                event.target.src = "img/verifiziertgrenn.png"
-
-            }
-            else{
-
-                event.target.src = "img/verifiziert.png"
-
+                button.style.display = "block";
+                event.target.src = "img/verifiziertgrenn.png";
+                datum.style.display = "none";
+            } else {
+                button.style.display = "none";
+                event.target.src = "img/verifiziert.png";
+                datum.style.display = "block";
             }
         }
     });
     
+    
           
     
-           
-           // let specificCategory = event.target.dataset.category;
-    
-            
-           // let specificElements = document.querySelectorAll(`.img-textCon[data-category="${specificCategory}"]`);
-    
-            
-         //   if (specificElements.length > 0) {
-         //        specificElements.forEach(function(element) {
-         //           element.src = "img/verifiziertgrenn.png";
-          //      });
-         //   }
-    
-    
-    
-                  
-
     
                     
                     
